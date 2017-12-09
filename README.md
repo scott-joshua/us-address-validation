@@ -7,7 +7,7 @@ You will need a User ID from the US POSTAL Service populated in the env.json fil
 
 If you have sam-local installed you run test locally with
 
-sam local invoke USAddressValidation --env-vars env.json -e event.json 
+sam local invoke USAddressValidation --env-vars test/env.json -e test/event.json 
 
 
 Example input:
@@ -15,7 +15,7 @@ Example input:
 
 {
   "Address": {
-    "Street1": "200 W CENTER ST",
+    "Street1": "75 W CENTER ST",
     "Street2": null,
     "City": "PROVO",
     "District": null,
