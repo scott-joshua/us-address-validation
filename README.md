@@ -1,10 +1,13 @@
-Welcome to the AWS CodeStar sample web service
+Welcome to the US Address Validation lambda Function
 ==============================================
 
-Run test locally with
+This is a lambda function that wraps a call to the US postal Services address validation
+
+You will need a User ID from the US POSTAL Service populated in the env.json file before you can run this.
+
+If you have sam-local installed you run test locally with
 
 sam local invoke USAddressValidation --env-vars env.json -e event.json 
-
 
 
 Example input:
@@ -12,7 +15,7 @@ Example input:
 
 {
   "Address": {
-    "Street1": "75 W CENTER ST",
+    "Street1": "200 W CENTER ST",
     "Street2": null,
     "City": "PROVO",
     "District": null,
@@ -29,7 +32,7 @@ Example Output:
 ```json
    {
     "Address":{
-      "Street1":"75 W CENTER ST",
+      "Street1":"200 W CENTER ST",
       "Street2":"NULL",
       "City":"PROVO",
       "District":null,
