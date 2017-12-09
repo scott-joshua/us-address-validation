@@ -4,7 +4,9 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
+        "aws-serverless-express": "latest",
         "express": "latest",
-        "aws-serverless-express": "latest"
+        "node-fetch": "^1.7.3",
+        "xml2js": "^0.4.19"
     }
 }
