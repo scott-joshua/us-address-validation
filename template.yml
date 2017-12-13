@@ -17,7 +17,7 @@ Resources:
       Environment:
               Variables:
                 SERVICEKEY: SERVICEKEY
-                TEST_FLAG: TEST_FLAG
+                ACTIVE_FLAG: ACTIVE_FLAG
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
