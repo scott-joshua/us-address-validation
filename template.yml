@@ -6,7 +6,7 @@ Transform:
 Parameters:
   ProjectId:
     Type: String
-    Description: AWS LAmbda Function to Validate US Address
+    Description: AWS Lambda Function to Validate US Address
 
 Resources:
   USAddressValidation:
@@ -17,7 +17,12 @@ Resources:
       Environment:
               Variables:
                 SERVICEKEY: SERVICEKEY
+                TEST_FLAG: TEST_FLAG
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
-
+    GetEvent:
+     Type: Api
+     Properties:
+       Path: /address
+       Method: post
