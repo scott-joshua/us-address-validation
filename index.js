@@ -13,6 +13,10 @@ exports.handler = (event, context, callback) => {
         callback(null, address);
     } else {
         let address = event;
+        if(!address.Street1) {
+            address = event.Shipping.ShippingParty[0].ShippingAddress.Address
+        }
+
         let body = `<AddressValidateRequest USERID="${serviceKey}"><Address ID="0"><Address1>${address.Street1}</Address1> <Address2>${address.Street2}</Address2><City>${address.City}</City><State>${address.Region}</State> <Zip5>${address.PostalCode}</Zip5><Zip4></Zip4></Address></AddressValidateRequest>`;
         fetch('http://production.shippingapis.com/ShippingAPITest.dll?API=Verify&XML=' + body, {
             method: 'GET',
